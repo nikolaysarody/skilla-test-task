@@ -1,0 +1,29 @@
+@use '~/styles/config' as *;
+
+.status-rate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: grey solid 1px;
+  border-radius: 4px;
+  padding: 6px 8px;
+  width: fit-content;
+
+  &--good {
+    border-color: $icon-color;
+    color: $text-dark-color;
+    background-color: $secondary-color;
+  }
+
+  &--bad {
+    border-color: $red-color;
+    color: $red-color;
+    background-color: $light-red-color;
+  }
+
+  &--excellent {
+    border-color: $green-color;
+    color: $text-green-color;
+    background-color: $light-green-color;
+  }
+}

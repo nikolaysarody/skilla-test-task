@@ -1,0 +1,7 @@
+@use './styles/config' as *;
+
+.app {
+  height: 100dvh;
+  background-color: $background-main-color;
+  display: flex;
+}

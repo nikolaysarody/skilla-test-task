@@ -1,0 +1,133 @@
+@use '~/styles/config' as *;
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 50px 12px 18px;
+  background-color: $background-audio-player-color;
+  border-radius: 48px;
+  flex: 1;
+
+  &__time-display {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    width: 60px;
+    text-align: center;
+  }
+
+  &__time-display {
+    font-size: 15px;
+    font-weight: 400;
+    color: $text-dark-color;
+    text-align: center;
+  }
+
+  &__progress-wrapper {
+    flex-grow: 1;
+    margin: 0 16px;
+    position: relative;
+  }
+
+  &__progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__progress-filled {
+    height: 100%;
+    background-color: #2563eb;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.1s linear;
+  }
+
+  &__hover-time {
+    position: absolute;
+    top: -25px;
+    transform: translateX(-50%);
+    color: $text-dark-color;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 10;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+    }
+  }
+
+  &__download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+
+    svg {
+      fill: $icon-color;
+    }
+
+    &:hover {
+      svg {
+        fill: $accent-color;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__icon-download {
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 12px;
+      background-color: #64748b;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #64748b;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      bottom: 0;
+      left: 50%;
+      margin-left: -5px;
+    }
+  }
+}

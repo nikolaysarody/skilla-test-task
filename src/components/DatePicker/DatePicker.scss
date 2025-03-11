@@ -1,0 +1,32 @@
+@use '~/styles/config' as *;
+
+.date-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__title-button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 82px;
+    cursor: pointer;
+
+    svg {
+      fill: $icon-color;
+    }
+
+    &:hover {
+      svg {
+        fill: $accent-color;
+      }
+    }
+  }
+
+  &__title {
+    color: $accent-color;
+  }
+}

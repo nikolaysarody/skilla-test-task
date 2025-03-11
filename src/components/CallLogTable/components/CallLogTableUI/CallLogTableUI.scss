@@ -1,0 +1,145 @@
+@use '~/styles/config' as *;
+
+.call-log-table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+
+  &__audio {
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    &__duration {
+      text-align: right;
+      margin-right: 40px;
+      opacity: 1;
+    }
+
+    &__player {
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      margin-right: 40px;
+      width: 100%;
+    }
+  }
+
+  &__container {
+    border-radius: 8px;
+    background-color: white;
+    padding-left: 40px;
+    flex: 1;
+    overflow: auto;
+  }
+
+  &__sort-btn {
+    width: 18px;
+    height: 21px;
+  }
+
+  &__no-script {
+    color: $red-color;
+  }
+
+  &__source {
+    color: $text-secondary-color;
+  }
+
+  th, td {
+    padding: 16px 1px;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  th {
+    padding: 24px 1px 20px 1px;
+    text-align: left;
+    font-weight: 400;
+    color: $text-secondary-color;
+    border-bottom: 1px solid $border-color;
+  }
+
+  td {
+    color: $text-dark-color;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $border-color;
+
+    &:hover {
+      position: relative;
+      background-color: $background-hover-color;
+      box-shadow: -40px 0 0 $background-hover-color, 0 1px 0 $border-color;
+
+      .call-log-table__audio__duration {
+        opacity: 0;
+      }
+
+      .call-log-table__audio__player {
+        opacity: 1;
+      }
+
+      &:last-child {
+        box-shadow: -40px 0 0 $background-hover-color;
+      }
+    }
+  }
+
+  &__header-cell {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &.right {
+      justify-content: flex-end;
+      padding-right: 11px;
+    }
+  }
+
+  &__phone-cell {
+    white-space: pre-line;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &__description {
+      color: $text-secondary-color;
+
+      &--without-title {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.skeleton {
+  background-color: $background-color;
+  border-radius: 4px;
+  min-height: 32px;
+}
+
+.skeleton-text {
+  width: 50%;
+  height: 14px;
+  animation: shimmer 0.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}

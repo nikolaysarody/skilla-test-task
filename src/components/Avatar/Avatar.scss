@@ -1,0 +1,20 @@
+@use '~/styles/config' as *;
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $border-color;
+  border-radius: 50%;
+
+  &__name {
+    color: $accent-color;
+    font-weight: 500;
+    font-family: inherit;
+    font-size: 11.2px;
+  }
+}

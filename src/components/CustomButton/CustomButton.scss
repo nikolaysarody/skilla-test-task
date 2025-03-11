@@ -1,0 +1,45 @@
+@use '~/styles/config' as *;
+
+.arrow-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 6px;
+
+  &__icon {
+    fill: $icon-color;
+
+    &--cross {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    &:hover {
+      fill: $accent-color;
+    }
+
+    &--left {
+      rotate: -90deg;
+    }
+    &--right {
+      rotate: 90deg;
+    }
+    &--bottom {
+      rotate: 180deg;
+    }
+  }
+
+  .disabled {
+    fill: $icon-color;
+  }
+}
