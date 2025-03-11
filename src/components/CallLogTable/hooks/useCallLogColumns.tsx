@@ -21,7 +21,11 @@ export const useCallLogColumns = () => {
         }),
         columnHelper.accessor('date', {
             header: ({ column }) => (
-                <div className="call-log-table__header-cell">
+                <div
+                    className="call-log-table__header-cell pointer"
+                    onClick={() => column.toggleSorting()}
+                    role={'button'}
+                >
                     <span>Время</span>
                     <CustomButton
                         direction={
@@ -30,7 +34,7 @@ export const useCallLogColumns = () => {
                                 : CustomButtonTypesEnum.BOTTOM
                         }
                         icon={CustomButtonIconsEnum.ARROW}
-                        onClick={() => column.toggleSorting()}
+                        active={Boolean(column.getIsSorted())}
                     />
                 </div>
             ),
@@ -77,7 +81,11 @@ export const useCallLogColumns = () => {
         }),
         columnHelper.accessor('duration', {
             header: ({ column }) => (
-                <div className="call-log-table__header-cell right">
+                <div
+                    className="call-log-table__header-cell right pointer"
+                    onClick={() => column.toggleSorting()}
+                    role={'button'}
+                >
                     <span>Длительность</span>
                     <CustomButton
                         direction={
@@ -86,7 +94,7 @@ export const useCallLogColumns = () => {
                                 : CustomButtonTypesEnum.BOTTOM
                         }
                         icon={CustomButtonIconsEnum.ARROW}
-                        onClick={() => column.toggleSorting()}
+                        active={Boolean(column.getIsSorted())}
                     />
                 </div>
             ),

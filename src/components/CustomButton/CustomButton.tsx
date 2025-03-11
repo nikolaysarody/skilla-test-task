@@ -12,6 +12,7 @@ interface ICustomButtonProps {
     className?: string;
     children?: React.ReactNode;
     disabled?: boolean;
+    active?: boolean;
 }
 
 const CustomButton = (props: ICustomButtonProps) => {
@@ -22,6 +23,7 @@ const CustomButton = (props: ICustomButtonProps) => {
         children,
         icon,
         disabled,
+        active,
     } = props;
 
     const IconBody = useMemo(() => {
@@ -29,7 +31,7 @@ const CustomButton = (props: ICustomButtonProps) => {
             case CustomButtonIconsEnum.ARROW: {
                 return (
                     <ArrowSvg
-                        className={clsx('arrow-button__icon', `arrow-button__icon--${direction}`, { 'disabled': disabled })}/>
+                        className={clsx('arrow-button__icon', `arrow-button__icon--${direction}`, { 'disabled': disabled, 'active': active })}/>
                 );
             }
             case CustomButtonIconsEnum.CROSS: {
