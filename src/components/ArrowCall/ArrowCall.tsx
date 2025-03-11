@@ -15,7 +15,7 @@ const ArrowCall = (props: IArrowCallProps) => {
     } = props;
 
     return (
-        <ArrowSvg className={ clsx('arrow-call', `arrow-call--${ type }`, className) }/>
+        <ArrowSvg className={clsx('arrow-call', `arrow-call--${type}`, className)}/>
     );
 };
 

@@ -1,13 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { useDispatch } from 'react-redux';
-import appReducer from './slices/appSlice/appSlice'
+import appReducer from './slices/appSlice/appSlice';
 import { rtkApi } from '~/shared/config/rtkApi.ts';
 
 const rootReducer = combineReducers({
     app: appReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
-})
+});
 
 const store = configureStore({
     reducer: rootReducer,
@@ -16,12 +16,12 @@ const store = configureStore({
             serializableCheck: false,
         })
             .concat(rtkApi.middleware),
-})
+});
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);
 
 export type RootState = ReturnType<typeof store.getState>
-export const useAppDispatch = () => useDispatch<typeof store.dispatch>()
+export const useAppDispatch = () => useDispatch<typeof store.dispatch>();
 
 export const setupStore = (preloadedState?: Partial<RootState>) => {
     return configureStore({
@@ -32,10 +32,10 @@ export const setupStore = (preloadedState?: Partial<RootState>) => {
             })
                 .concat(rtkApi.middleware),
         preloadedState,
-    })
-}
+    });
+};
 
 export type AppStore = ReturnType<typeof setupStore>
 
-export default store
+export default store;
 

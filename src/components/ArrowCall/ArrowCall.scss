@@ -4,12 +4,15 @@
   &--incoming {
     fill: $accent-color;
   }
+
   &--outgoing {
     fill: $green-color;
   }
+
   &--missed, &--failure {
     fill: $red-color;
   }
+
   &--failure, &--outgoing {
     rotate: 180deg;
   }

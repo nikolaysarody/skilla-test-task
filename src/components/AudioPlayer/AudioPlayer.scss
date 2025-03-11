@@ -7,21 +7,13 @@
   padding: 12px 50px 12px 18px;
   background-color: $background-audio-player-color;
   border-radius: 48px;
-  flex: 1;
-
-  &__time-display {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1f2937;
-    width: 60px;
-    text-align: center;
-  }
 
   &__time-display {
     font-size: 15px;
     font-weight: 400;
     color: $text-dark-color;
     text-align: center;
+    width: 60px;
   }
 
   &__progress-wrapper {
@@ -33,7 +25,7 @@
   &__progress-container {
     width: 100%;
     height: 8px;
-    background-color: #e5e7eb;
+    background-color: $icon-color;
     border-radius: 4px;
     cursor: pointer;
     position: relative;
@@ -42,7 +34,7 @@
 
   &__progress-filled {
     height: 100%;
-    background-color: #2563eb;
+    background-color: $accent-color;
     border-radius: 4px;
     position: absolute;
     top: 0;
@@ -97,37 +89,6 @@
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-    }
-  }
-
-  &__icon-download {
-    width: 20px;
-    height: 20px;
-    position: relative;
-
-    &:before {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 12px;
-      background-color: #64748b;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border: 2px solid #64748b;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      bottom: 0;
-      left: 50%;
-      margin-left: -5px;
     }
   }
 }

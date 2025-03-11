@@ -41,7 +41,7 @@ const DatePicker = memo((props: IDatePickerProps) => {
                 startDate: start,
                 endDate: end,
             });
-            return
+            return;
         }
 
         const period = timeMap[item];

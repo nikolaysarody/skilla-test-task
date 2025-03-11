@@ -28,18 +28,19 @@ const CustomButton = (props: ICustomButtonProps) => {
         switch (icon) {
             case CustomButtonIconsEnum.ARROW: {
                 return (
-                    <ArrowSvg className={clsx('arrow-button__icon', `arrow-button__icon--${direction}`, {'disabled': disabled})}/>
-                )
+                    <ArrowSvg
+                        className={clsx('arrow-button__icon', `arrow-button__icon--${direction}`, { 'disabled': disabled })}/>
+                );
             }
             case CustomButtonIconsEnum.CROSS: {
                 return (
-                    <div className='arrow-button__icon--cross'>
-                        <CrossSvg className={clsx({'disabled': disabled})}/>
+                    <div className="arrow-button__icon--cross">
+                        <CrossSvg className={clsx({ 'disabled': disabled })}/>
                     </div>
-                )
+                );
             }
         }
-    }, [direction, disabled, icon])
+    }, [direction, disabled, icon]);
 
     return (
         <button

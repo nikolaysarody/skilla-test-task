@@ -37,7 +37,7 @@ const Dropdown = (props: DropdownProps) => {
     return (
         <div className="dropdown" ref={dropdownRef}>
             {isOpen && (
-                <div className={clsx('dropdown__menu', `dropdown__menu--${direction}`,)}>
+                <div className={clsx('dropdown__menu', `dropdown__menu--${direction}`)}>
                     {items.map((item) => (
                         <div
                             className={clsx('dropdown__item', { 'dropdown__item--active': selectedItem === item.key })}

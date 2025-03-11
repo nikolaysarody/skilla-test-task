@@ -6,4 +6,4 @@ export const fetchDate = (date?: string | Date) => {
 
 export const secondToTime = (time: number) => {
     return dayjs.duration(time, 'second').format('mm:ss');
-}
+};

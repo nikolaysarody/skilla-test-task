@@ -70,22 +70,22 @@ interface ICallAbuse {
 }
 
 export interface ICallRequest {
-    date_start: string
-    date_end: string
-    in_out?: 1 | 0
-    limit?: number
-    offset?: number
-    sort_by?: string
-    order?: 'ASC' | 'DESC'
-    status?: 'success' | 'fail'
-    from_type?: ('clients' | 'new_clients' | 'workers' | 'app')[]
-    from_persons?: string[]
-    sources?: ('from_site' | 'yandex' | 'google' | 'empty' | string)[]
-    gte?: number
-    lte?: number
-    errors?: ('noerrors' | 'noscript' | 'timeover' | 'notavailable' | 'noanswer' | 'subscribercompleted')[]
-    results?: ('order' | 'message' | 'preorder' | 'candidate' | 'candidateMessage')[]
-    search?: string
-    ids?: string[]
-    xls?: 1 | undefined
+    date_start: string;
+    date_end: string;
+    in_out?: 1 | 0;
+    limit?: number;
+    offset?: number;
+    sort_by?: string;
+    order?: 'ASC' | 'DESC';
+    status?: 'success' | 'fail';
+    from_type?: ('clients' | 'new_clients' | 'workers' | 'app')[];
+    from_persons?: string[];
+    sources?: ('from_site' | 'yandex' | 'google' | 'empty' | string)[];
+    gte?: number;
+    lte?: number;
+    errors?: ('noerrors' | 'noscript' | 'timeover' | 'notavailable' | 'noanswer' | 'subscribercompleted')[];
+    results?: ('order' | 'message' | 'preorder' | 'candidate' | 'candidateMessage')[];
+    search?: string;
+    ids?: string[];
+    xls?: 1 | undefined;
 }

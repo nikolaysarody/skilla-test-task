@@ -19,7 +19,10 @@ const CallLogTable = () => {
 
     const [isCallsFilterOpen, setCallsFilterOpen] = useState(false);
     const [selectedCallType, setSelectedCallType] = useState<IDropdownItem>(callsTypes[0]);
-    const [selectedDate, setSelectedDate] = useState<DatePickerDateType>({startDate: fetchDate().subtract(3, 'days').toDate(), endDate: new Date()});
+    const [selectedDate, setSelectedDate] = useState<DatePickerDateType>({
+        startDate: fetchDate().subtract(3, 'days').toDate(),
+        endDate: new Date(),
+    });
 
     const data: CallLogEntryType[] = useCallLogData(callsData);
     const columns = useCallLogColumns();

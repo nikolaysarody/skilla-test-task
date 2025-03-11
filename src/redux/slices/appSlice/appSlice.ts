@@ -3,7 +3,7 @@ import { IAppSliceInitialState } from './appSlice.types';
 
 const appSliceInitialState: IAppSliceInitialState = {
     audioPlaying: null,
-}
+};
 
 export const appSlice = createSlice({
     name: 'app',
@@ -11,12 +11,12 @@ export const appSlice = createSlice({
     reducers: {
         setAudioPlaying: (state, action: PayloadAction<string>) => {
             state.audioPlaying = action.payload;
-        }
+        },
     },
-})
+});
 
 export const {
     setAudioPlaying,
-} = appSlice.actions
+} = appSlice.actions;
 
-export default appSlice.reducer
+export default appSlice.reducer;

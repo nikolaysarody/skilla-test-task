@@ -16,7 +16,7 @@ export const useCallLogColumns = () => {
     const columns = useMemo(() => [
         columnHelper.accessor('type', {
             header: 'Тип',
-            cell: info => <ArrowCall type={info.getValue()} />,
+            cell: info => <ArrowCall type={info.getValue()}/>,
             size: 1,
         }),
         columnHelper.accessor('date', {
@@ -38,13 +38,13 @@ export const useCallLogColumns = () => {
         }),
         columnHelper.accessor('employee', {
             header: 'Сотрудник',
-            cell: info => <Avatar source={info.getValue().avatar} name={info.getValue().name} />,
+            cell: info => <Avatar source={info.getValue().avatar} name={info.getValue().name}/>,
             size: 100,
         }),
         columnHelper.accessor('phone', {
             header: 'Звонок',
             cell: info => {
-                const { title, description } = info.getValue()
+                const { title, description } = info.getValue();
                 return (
                     <div className="call-log-table__phone-cell">
                         {title && (
@@ -72,7 +72,7 @@ export const useCallLogColumns = () => {
                 if (!Object.values(StatusRateTypesEnum).includes(rate as StatusRateTypesEnum)) {
                     return <span className="call-log-table__no-script">{rate}</span>;
                 }
-                return <StatusRate rate={rate as StatusRateTypesEnum} />;
+                return <StatusRate rate={rate as StatusRateTypesEnum}/>;
             },
         }),
         columnHelper.accessor('duration', {

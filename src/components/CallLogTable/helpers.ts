@@ -42,10 +42,3 @@ export const callsTypes = [
     { value: 'Входящие', key: 'Входящие' },
     { value: 'Исходящие', key: 'Исходящие' },
 ];
-
-export const datesTypes = [
-    { value: '3 дня', key: '3 дня' },
-    { value: 'Неделя', key: 'Неделя' },
-    { value: 'Месяц', key: 'Месяц' },
-    { value: 'Год', key: 'Год' },
-];

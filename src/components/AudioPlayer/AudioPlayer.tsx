@@ -182,7 +182,7 @@ const AudioPlayer = (props: IAudioPlayerProps) => {
                 audio.removeEventListener('ended', handleEnded);
             };
         }
-    }, [audioRef, audioUrl, isPlaying]);
+    }, [audioId, audioRef, audioUrl, dispatch, isPlaying]);
 
     return (
         <div className={clsx(className, 'audio-player')}>
